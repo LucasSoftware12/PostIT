@@ -1,6 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
+from colorfield.fields import ColorField
+from django.db import models
+
+
+class MyModel(models.Model):
+    color = ColorField(default='#FF0000')
 
 
 class nota(models.Model):

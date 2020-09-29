@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'apps.login',
     'apps.user',
     'django_filters',
+    'colorfield',
 ]
 
 MIDDLEWARE = [

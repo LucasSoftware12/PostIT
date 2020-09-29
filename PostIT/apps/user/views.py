@@ -74,12 +74,15 @@ def newnota(request):
         user = User.objects.get(id=current_user.id)
         newnote = registernota(request.POST)
         model = nota
+        print(newnota)
+        print(request)
         if newnote.is_valid():
             model.titulo = newnote.cleaned_data["titulo"]
             model.descripcion = newnote.cleaned_data["descripcion"]
             model.fecha = newnote.cleaned_data["fecha"]
             model.color = newnote.cleaned_data["color"]
-            grabar = nota(id_usuario=user, titulo=model.titulo, fecha=model.fecha,
+            print(model.color)
+            grabar = nota(id_usuario=user, titulo=model.titulo, fecha=model.fecha, color=model.color,
                           descripcion=model.descripcion)
             grabar.save()
             return redirect('home')
