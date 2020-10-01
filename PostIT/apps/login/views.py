@@ -20,17 +20,23 @@ def indexPage(request):
         model_username = request.POST.get('username')
         model_password = request.POST.get('password')
         if (model_username != None) and (model_password != None):
-            if log_in.is_valid():
-                user = authenticate(username=model_username,
+            logemail = User.POST.get(email=model_username)
+            try:
+                user = authenticate(username=logemail.username,
                                     password=model_password)
                 login(request, user)
-                # messages.success(request, 'User name is: '+model_username)
-                current_user = request.user
-                user = User.objects.get(username=model_username)
-                return mostrar_notas(request)
-            else:
-                # messages.success(request, 'data error :')
-                return redirect('index')
+            except:
+                if log_in.is_valid():
+                    user = authenticate(username=model_username,
+                                        password=model_password)
+                    login(request, user)
+                    current_user = request.user
+                    user = User.objects.get(username=model_username)
+                    # messages.success(request, 'User name is: '+model_username)
+                    return mostrar_notas(request)
+                else:
+                    # messages.success(request, 'data error :')
+                    return redirect('index')
     newUser = registerUser(request.POST)
     model = User
     if newUser.is_valid():

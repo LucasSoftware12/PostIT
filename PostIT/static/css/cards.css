@@ -119,3 +119,10 @@ li {
   font-size: 1.2em;
   text-align: center;
 }
+
+
+input {
+  background: transparent;
+  color: #ffffff;
+  color: solid;
+}

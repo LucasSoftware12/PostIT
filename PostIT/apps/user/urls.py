@@ -8,4 +8,5 @@ urlpatterns = [
     path("create/", newnota, name="create"),
     path("delete/<int:pk>/", deleteNote, name="delete"),
     path("informatorio/", informatorio, name="informatorio"),
+    path("search/",mostrar_notas,name="search"),
 ]

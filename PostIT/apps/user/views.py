@@ -26,11 +26,8 @@ def mostrar_notas(request):
 
 @login_required
 def edit(request, pk):
-    print(pk)
     buscar = nota.objects.get(id=pk)
-    print("antes del post")
     if request.method == "POST":
-        print("post")
         current_user = request.user
         user = User.objects.get(id=current_user.id)
         newnote = registernota(request.POST)
@@ -48,7 +45,6 @@ def edit(request, pk):
         else:
             return redirect('edit/', pk)
     else:
-        print("enviar formulario")
         newnote = registernota(instance=buscar)
     return render(request, "home/edit.html", {"nota": newnote})
 
@@ -62,7 +58,6 @@ def deleteNote(request, pk):
         grabar.delete()
         return mostrar_notas(request)
     else:
-        print("enviar formulario")
         newnote = registernota(instance=buscar)
     return render(request, "home/delete.html", {"nota": newnote})
 
@@ -74,15 +69,12 @@ def newnota(request):
         user = User.objects.get(id=current_user.id)
         newnote = registernota(request.POST)
         model = nota
-        print(newnota)
-        print(request)
         if newnote.is_valid():
             model.titulo = newnote.cleaned_data["titulo"]
             model.descripcion = newnote.cleaned_data["descripcion"]
             model.fecha = newnote.cleaned_data["fecha"]
             model.color = newnote.cleaned_data["color"]
-            print(model.color)
-            grabar = nota(id_usuario=user, titulo=model.titulo, fecha=model.fecha, color=model.color,
+            grabar = nota(id_usuario=user, titulo=model.titulo, fecha=model.fecha,
                           descripcion=model.descripcion)
             grabar.save()
             return redirect('home')
@@ -91,24 +83,6 @@ def newnota(request):
     else:
         newnote = registernota()
     return render(request, 'home/create.html', {"newnote": newnote})
-
-
-@login_required
-def searchNote(request):
-    current_user = request.user
-    newnote = registernota(request.POST)
-    user = User.objects.get(id=current_user.id)
-    buscale = request.Search
-    print(newnota)
-    print(buscale)
-
-    if buscale != None:
-        notuli = nota.objects.filter(titulo=buscale)
-        ctx = {"user": current_user, "notas": notuli}
-        return render(request, "home/notas.html", ctx)
-    else:
-        ctx = {"user": current_user, "notas": notuli}
-    return mostrar_notas(request)
 
 
 @login_required
