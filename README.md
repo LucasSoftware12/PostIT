@@ -10,8 +10,8 @@ pw: prueba
 
 # PostIT
 1) Puede crearse una cuenta y loguearse. / 
-2) Puede Crear, Leer, Actualizar y Borrar una tarjeta./
-3) Puede Buscar./
+2) Puede Crear, Leer, Actualizar y Borrar una tarjeta. /
+3) Puede Buscar. /
 
 # Configuración
 1)Puede cambiar el nombre de usuario, email y contraseña.
