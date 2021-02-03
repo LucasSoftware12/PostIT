@@ -14,7 +14,7 @@ pw: prueba
 3) Puede Buscar. 
 
 # Configuración
-1)Puede cambiar el nombre de usuario, email y contraseña.
+1) Puede cambiar el nombre de usuario, email y contraseña.
 
 # Informatorio
 Encontrará los nombres de los desarrolladores y sus linkedin
