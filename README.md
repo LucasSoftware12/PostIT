@@ -5,7 +5,7 @@ Proyecto realizado por estudiantes del Informatorio Chaco
 http://mirkoangel1.pythonanywhere.com/
 
 # Testing user
-id: prueba
+id: prueba /
 pw: prueba
 
 ![alt text](https://github.com/LucasSoftware12/PostIT/blob/master/postit1.PNG)
