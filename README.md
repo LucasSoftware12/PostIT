@@ -19,6 +19,11 @@ pw: prueba
 # Informatorio
 Encontrará los nombres de los desarrolladores y sus linkedin
 
+# Tecnologías
+1) Python
+1) Sqlite
+
+
 ![alt text](https://github.com/LucasSoftware12/PostIT/blob/master/postit1.PNG)
 ![alt text](https://github.com/LucasSoftware12/PostIT/blob/master/postit2.PNG)
 ![alt text](https://github.com/LucasSoftware12/PostIT/blob/master/postit3.PNG)
